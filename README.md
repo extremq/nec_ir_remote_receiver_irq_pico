@@ -15,7 +15,7 @@ void callback_ir (uint16_t address, uint16_t command, int type) {
 int main() {
     ...
     // This is all you do.
-    init_ir_irq_receiver(0, &callback_ir);
+    init_ir_irq_receiver(YOUR_GPIO_PIN, &callback_ir);
     ...
 }
 ```
