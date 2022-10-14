@@ -3,23 +3,11 @@
 
 #include "ir_rx_irq.h"
 
-/**
- * @brief Representation of the pulses by time in microseconds.
- */
-struct _ir_data {
-    size_t cnt; /**< Used for keeping track of pulse length. */
-    uint64_t rises[34]; /**< Used for keeping track of timings. Has time of each pulse in microseconds. */
-} ir_data;
+struct _ir_data ir_data;
 
-/**
- * @brief Used for repeat codes
- */
 uint16_t __last_address = 0x0;
 uint16_t __last_command = 0x0;
 
-/**
- * @brief The user's function. 
- */
 void (*user_function_callback) (uint16_t address, uint16_t command, int type) = NULL;
 
 void reset_ir_data() {
