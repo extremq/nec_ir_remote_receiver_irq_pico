@@ -1,6 +1,19 @@
 # nec_ir_remote_receiver_irq_pico
 A simple, IRQ-based implementation of the IR NEC receiver protocol in C using the Raspberry Pi Pico SDK.
 
+# How to install the module (for beginners)
+The minimal way of adding this module to your CMake project is by downloading the `ir_rx_irq.c` and `ir_rx_irq.h` files
+and placing them in the same folder as your main source.
+
+From there, you have to add the files inside `add_executable`. For example:
+```cmake
+add_executable(my_project
+        main.c
+        ir_rx_irq.c
+        ir_rx_irq.h
+        )
+```
+
 # Usage
 Check `example.c` for a basic starting point.
 ```c
